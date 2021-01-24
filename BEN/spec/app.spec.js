@@ -27,3 +27,25 @@ describe("APP", () => {
         })
     })
 })
+describe("ERROR HANDLING", () => {
+    it("returns 404 for path not found", () => {
+        return request(app)
+        .get("/ap/")
+        .expect(404)
+        .then(({body: {msg}})=>{
+            expect(msg).to.eql("Path not found")
+        })
+    })
+    it("returns 405 for method not allowed", () => {
+        const invalidMethods = [ "put", "patch", "delete"];
+        const methodPromises = invalidMethods.map(method => {
+          return request(app)
+            [method]("/api/")
+            .expect(405)
+            .then(({ body: { msg } }) => {
+              expect(msg).to.equal("Invalid method");
+            });
+        });
+        return Promise.all(methodPromises);
+    })
+})

@@ -1,6 +1,6 @@
 ## S3 BUCKET DOGS
 
-This app is build using react, express, and AWS s3 buckets. Users can see all dogs in buckets and upload dogs from their own images. It is built using TDD and a RESTful API. It is tested with mocha.
+This app is the back end to an app using react, express, and AWS s3 buckets. Users can see all dogs in buckets and upload dogs from their own images. It is built using TDD and a RESTful API. It is tested with mocha.
 
 ## To run
 
