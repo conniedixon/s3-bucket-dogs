@@ -15,7 +15,7 @@ describe("APP", () => {
         })
     })
     it("uploads a file to s3", () => {
-        return fs.readFile("models/testImage.jpg", async (err, data) => { 
+        return fs.readFile("spec/testImage.jpg", async (err, data) => { 
             return request(app)
             .post("/api/")
             .send(data)
